@@ -1,0 +1,490 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+	max-width: 100%;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: normal;
+}
+
+.container {
+    max-width: 1149px;
+    margin: auto;
+}
+
+.header {
+    background: linear-gradient(268deg, #067D76 48.42%, rgba(6, 125, 118) 207.48%, #067D76 207.48%);
+    color: white;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    z-index: 50;
+}
+
+.fake-header {
+    height: 60px;
+    background: #067D76;
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.menumedia {
+    display: flex;
+    align-items: center;
+}
+
+.menu-list {
+    list-style: none;
+    display: flex;
+    font-size: 18px;
+    font-weight: 200;
+}
+
+.menu-item {
+    margin-right: 50px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.menu-item:last-child {
+    margin-right: 0;
+}
+
+.menu-item a:hover {
+    color: rgb(205, 205, 205);
+}
+
+.social {
+    width: 35px;
+    height: 35px;
+    margin-left: 55px;
+}
+
+.social a {
+    width: 35px;
+    height: 35px;
+}
+
+.social svg:hover {
+    cursor: pointer;
+}
+
+.main-content {
+    color: white;
+    padding-top: 80px;
+    height: calc(100vh - 60px);
+    background-image: url(../img/bg.png);
+    background-position: center center;
+    background-size: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.main-content .container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 140px);
+    justify-content: space-between;
+    max-width: 1500px;
+}
+
+.main-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-content-text {
+    font-size: 24px;
+    font-weight: 200;
+    line-height: 32px;
+    text-align: center;
+    max-width: 800px;
+    margin-bottom: 35px;
+    z-index: 2;
+    text-shadow: 0px 4px 5.800000190734863px #000;
+
+    transform: translate(0px, 50%);
+    opacity: 0;
+    transition: all 0.6s ease 0s;
+    
+}
+
+.main-content-text h1 {
+    font-size: 24px;
+    font-weight: 200;
+    line-height: 32px;
+    text-align: center;
+}
+
+.main-content-text.active {
+    transform: translate(0px, 0px);
+    opacity: 1;
+}
+
+.common-button {
+    border-radius: 60px;
+    background: linear-gradient(140deg, #00FFF1 -243.26%, rgba(217, 217, 217, 0.00) 94.51%);
+    border: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+    font-size: 18px;
+    color: white;
+    width: 222px;
+    height: 65px;
+    z-index: 5;
+    padding: 15px 20px;
+}
+
+.main-button {
+    background: #067D76;
+}
+.main-button:hover {
+    background: #03625c;
+}
+
+.cards-button.common-button:hover {
+    background: linear-gradient(140deg, #00fff2c7 -243.26%, rgba(187, 187, 187, 0) 94.51%);
+}
+
+.cards-img {
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0.5;
+}
+
+@media (max-width: 1200px) {
+    .cards-img {
+        left:initial;
+        min-width: 1500px;
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        padding: 0 15px;
+    }
+    .menu-item {
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .social {
+        margin-left: 25px;
+    }
+    .main-content {
+        padding-top: 50px;
+    }
+}
+
+@media (max-width: 450px) {
+    .main-content-text {
+        font-size: 20px;
+        line-height: 29px;
+    }
+    .main-content-text h1 {
+        font-size: 20px;
+        line-height: 29px;
+    }
+}
+
+
+
+
+
+
+
+
+
+.products {
+    height: 100%;
+    z-index: 10;
+    position: relative;
+    background-image: url(../img/bg2.png);
+    background-position: top right;
+    padding: 50px 0 75px 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.products-title {
+    font-size: 40px;
+    font-weight: 200;
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.products-items {
+    display: grid;
+    grid-template-columns: repeat(2, 290px);
+    justify-content: center;
+    column-gap: 200px;
+    row-gap: 40px;
+}
+
+.products-item {
+    transform: translate(-50%, 0);
+    opacity: 0;
+    transition: all 0.6s ease 0s;
+}
+
+.products-item.active {
+    transform: translate(0px, 0px);
+    opacity: 1;
+}
+
+.products-item img {
+    border: 1px dashed rgba(255, 255, 255, 0.30);
+    margin-bottom: 15px;
+    border-radius: 15px;
+}
+
+
+.cards-button.common-button {
+    margin-bottom: 0;
+    width: 150px;
+    height: 50px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 25px;
+    margin: auto;
+}
+
+@media (max-width: 900px) {
+    .products-items {
+        grid-template-columns: repeat(2, 290px);
+        justify-content: center;
+        column-gap: 100px;
+        row-gap: 30px;
+    }
+}
+
+@media (max-width: 700px) {
+    .products-items {
+        grid-template-columns: repeat(2, 230px);
+        justify-content: center;
+        column-gap: 60px;
+        row-gap: 30px;
+    }
+    .cards-button.common-button {
+        width: 120px;
+        height: 40px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 570px) {
+    .products-items {
+        grid-template-columns: repeat(2, 185px);
+        justify-content: center;
+        column-gap: 30px;
+        row-gap: 25px;
+    }
+    .cards-button.common-button {
+        width: 110px;
+        height: 35px;
+        font-size: 16px;
+    }
+    .products-title {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 420px) {
+    .products-items {
+        grid-template-columns: repeat(1, 260px);
+        justify-content: center;
+        /* column-gap: 30px; */
+        row-gap: 25px;
+    }
+    .cards-button.common-button {
+        width: 120px;
+        height: 40px;
+        font-size: 20px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.order {
+    margin-top: -10px;
+    background: rgb(33, 32, 32);
+    padding-top: 50px;
+}
+
+.order .container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.inst-profile {
+    height: 450px;
+    width: 400px;
+    position: relative; 
+}
+
+.order-img {
+    position: absolute;
+    bottom: 0;
+}
+
+.order-info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+    max-width: 500px;
+    transform: translate(-10%, 0);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.order-info.active {
+    transform: translate(0px, 0px);
+    opacity: 1;
+}
+
+.order-title {
+    font-size: 40px;
+    font-weight: 200;
+    color: white;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.order-text {
+    font-size: 18px;
+    font-weight: 200;
+    color: white;
+    text-align: center;
+    line-height: 28px;
+    margin-bottom: 15px;
+}
+
+.order-button {
+    height: 45px;
+    width: 130px;
+    background-color: #067D76;
+    border-radius: 9px;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    border: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.order-button span:first-child {
+    margin-right: 8px;
+    height: 25px;
+    width: 25px;
+}
+
+.order-button:hover {
+    background-color: #03625c;
+}
+
+@media (max-width: 900px) {
+    .order .container {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column-reverse;
+    }
+    .inst-profile {
+        margin: auto;
+    }
+    .order-info {
+        margin: auto;
+    }
+    .order-text {
+        margin-bottom: 30px;
+    }
+    .inst-profile {
+        height: 420px;
+    }
+}
+
+@media (max-width: 570px) {
+    .order-title {
+        font-size: 28px;
+    }
+    .order-text {
+        font-size: 16px;
+        line-height: 25px;
+    } 
+}
+
+@media (max-width: 420px) {
+    .order {
+        margin-top: -15px;
+    }
+    .order-title {
+        font-size: 28px;
+    }
+    .order-text {
+        font-size: 16px;
+        line-height: 25px;
+    }
+    .inst-profile {
+        height: 350px;
+        width: 325px;
+    }
+}
+
+@media (max-width: 350px) {
+    .inst-profile {
+        height: 300px;
+        width: 288px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
